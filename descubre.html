@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/img/Innovaction - Dashboard_files/logo.png">
-
-    <title>Album example for Bootstrap</title>
-
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/descubre.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+  <head>
+  <title>Descubre </title>
+      <nav id="navi">
+      <img class="NaviLogo" href="/index" src="img/logo.png" align="left" height="52px">
+      <ul class="MyContainer">
+        <img class="profileImg" type="button" href="#user" data-toggle="modal" data-target="#user" src="img/guest.png" height="40px">
+        <li> <div aria-label="Left Align" class="Notifications">
+        <span onclick="location.href='index.html';" class="glyphicon glyphicon-home" aria-hidden="true"><c class="tooltiptext">Inicio</c></span>
+        <span onclick="location.href='dashboard.html';" class="glyphicon glyphicon-dashboard" aria-hidden="true"><c class="tooltiptext">Dashboard</c></span>
+        <span onclick="location.href='descubre.html';" class="glyphicon glyphicon-globe" aria-hidden="true"><c class="tooltiptext">Descubre</c></span>
+       <span onclick="location.href='crear.html';" class="glyphicon glyphicon-plus" aria-hidden="true"><c class="tooltiptext">Crear Proyecto</c></span>
+        <a class="glyphicon glyphicon-search" href="#search"><c class="tooltiptext">Búsqueda</c></a>
+        <span class="glyphicon glyphicon-bell" aria-hidden="true"><c class="tooltiptext">Notificaciones</c></span>
+        </div>
+        </li>
+       <!-- <c> Welcome, {{User}}</c> -->
+      </ul>
+    </nav>
   </head>
 
   <body>
@@ -36,26 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="navbar navbar-inverse bg-inverse">
-      <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand">Descubre</a>
-
-        <!-- Nav -->
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="index.html">Iniciar sesión</a></li>
-                <li><a href="index.html">Crear cuenta</a></li>
-            </ul>
-        </nav>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </div>
-
+    <div class="separator"> </div>
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">¡Descubre Proyectos!</h1>

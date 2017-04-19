@@ -30,11 +30,12 @@
       <ul class="MyContainer">
         <img class="profileImg" type="button" href="#user" data-toggle="modal" data-target="#user" src="img/guest.png" height="40px">
         <li> <div aria-label="Left Align" class="Notifications">
-        <span onclick="location.href='dashboard.html';" class="glyphicon glyphicon-home" aria-hidden="true"><c class="tooltiptext">Inicio</c></span>
+        <span onclick="location.href='index.html';" class="glyphicon glyphicon-home" aria-hidden="true"><c class="tooltiptext">Inicio</c></span>
+        <span onclick="location.href='dashboard.html';" class="glyphicon glyphicon-dashboard" aria-hidden="true"><c class="tooltiptext">Dashboard</c></span>
         <span onclick="location.href='descubre.html';" class="glyphicon glyphicon-globe" aria-hidden="true"><c class="tooltiptext">Descubre</c></span>
        <span onclick="location.href='crear.html';" class="glyphicon glyphicon-plus" aria-hidden="true"><c class="tooltiptext">Crear Proyecto</c></span>
-        <a class="glyphicon glyphicon-search" href="#search"></a>
-        <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+        <a class="glyphicon glyphicon-search" href="#search"><c class="tooltiptext">Búsqueda</c></a>
+        <span class="glyphicon glyphicon-bell" aria-hidden="true"><c class="tooltiptext">Notificaciones</c></span>
         </div>
         </li>
        <!-- <c> Welcome, {{User}}</c> -->
@@ -48,8 +49,9 @@
     <ul>
         <li onclick="location.href='dashboard.html';" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <b> &nbsp; </b> Proyectos </li>
         <li onclick="location.href='calendar.html';"><span class="glyphicon glyphicon-calendar"  aria-hidden="true"></span> <b> &nbsp; Calendario </b></li>
-        <li onclick="location.href='documents.html';"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> <b> &nbsp; Documentos </b></li>
-        <li onclick="location.href='sessions.html';"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> <b> &nbsp; Sesiones </b></li>
+        <li onclick="location.href='projects.html';"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> <b> &nbsp; Mis Proyectos </b></li>
+        <li onclick="location.href='documents.html';"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> <b> &nbsp; Documentos </b></li>
+        <li onclick="location.href='sessions.html';"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> <b> &nbsp; Sesiones </b></li>
         <li onclick="location.href='team.html';"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <b> &nbsp; Social </b></li>
     </ul>
 <div> </div> </div>
@@ -70,7 +72,7 @@
 <div class="mainContainer">
 
 <div class="InicioFlag">
-<div class="flag"> <p>Mis Proyectos</p></div>
+<div class="flag"> <p>Inicio</p></div>
 </div>
 
 <div class="Content">
@@ -103,7 +105,7 @@ Vivamus tincidunt odio sed mauris vulputate efficitur. Phasellus egestas vulputa
                  <div class="ContainerCenter">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Logout</button>
                   </div> </div> </div> </div> </div> </div>
-			<!-- Modal End -->
+            <!-- Modal End -->
 
 </body>
 </html>

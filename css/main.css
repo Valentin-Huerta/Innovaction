@@ -29,18 +29,46 @@
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    position: relative;
+    position: fixed;
     font-size: 16px;
-    right:120px;
-    top: -8px;
+    right:250px;
+    top: 18px;
     z-index: 1;
 	}
 	.glyphicon.glyphicon-plus:hover .tooltiptext {
     visibility: visible;
 	}
 
+	.glyphicon.glyphicon-dashboard {
+	padding-right: 12px;
+	color:#ffffff;
+    font-size: 26px;
+	}
+	.glyphicon.glyphicon-dashboard:hover {
+    font-size: 26px;
+	color:#dddddd;
+	transition:all 0.2s linear;
+	}
+	.glyphicon.glyphicon-dashboard .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(255,255,255,0);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: fixed;
+    font-size: 16px;
+    right:250px;
+    top: 18px;
+    z-index: 1;
+	}
+	.glyphicon.glyphicon-dashboard:hover .tooltiptext {
+    visibility: visible;
+	}
+
 	.glyphicon.glyphicon-globe {
-	padding-right: 120px;
+	padding-right: 150px;
 	color:#ffffff;
     font-size: 26px;
 	}
@@ -57,27 +85,27 @@
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    position: relative;
+    position: fixed;
     font-size: 16px;
-    left:20px;
-    top: -8px;
+    right:250px;
+    top: 18px;
     z-index: 1;
 	}
 	.glyphicon.glyphicon-globe:hover .tooltiptext {
     visibility: visible;
 	}
 
-	.glyphicon.glyphicon-home {
+	#navi .glyphicon.glyphicon-home {
 	padding-right: 12px;
 	color:#ffffff;
     font-size: 26px;
 	}
-	.glyphicon.glyphicon-home:hover {
+	#navi .glyphicon.glyphicon-home:hover {
     font-size: 26px;
 	color:#dddddd;
 	transition:all 0.2s linear;
 	}
-	.glyphicon.glyphicon-home .tooltiptext {
+	#navi .glyphicon.glyphicon-home .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: rgba(255,255,255,0);
@@ -85,13 +113,13 @@
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    position: relative;
+    position: fixed;
     font-size: 16px;
-    left:20px;
-    top: -8px;
+    right:250px;
+    top: 18px;
     z-index: 1;
 	}
-	.glyphicon.glyphicon-home:hover .tooltiptext {
+	#navi .glyphicon.glyphicon-home:hover .tooltiptext {
     visibility: visible;
 	}
 
@@ -106,6 +134,24 @@
 	color:#dddddd;
 	transition:all 0.2s linear;
 	}
+	.glyphicon.glyphicon-bell .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(255,255,255,0);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: fixed;
+    font-size: 16px;
+    right:250px;
+    top: 18px;
+    z-index: 1;
+	}
+	.glyphicon.glyphicon-bell:hover .tooltiptext {
+    visibility: visible;
+	}
+
 	.glyphicon.glyphicon-search {
 	padding-right: 12px;
 	text-decoration: none;
@@ -117,11 +163,30 @@
 	color:#dddddd;
 	transition:all 0.2s linear;
 	}
+	.glyphicon.glyphicon-search .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(255,255,255,0);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: fixed;
+    font-size: 16px;
+    right:250px;
+    top: 18px;
+    z-index: 1;
+	}
+	.glyphicon.glyphicon-search:hover .tooltiptext {
+    visibility: visible;
+	}
+
 	.Notifications{
 		position:absolute;
 		top:20px;
 		right:110px;
 	}
+
 
 	c{
 		position:absolute;
