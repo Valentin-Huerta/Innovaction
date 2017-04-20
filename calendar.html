@@ -16,6 +16,7 @@
     <script src="js/transition.js"></script>
     <script src="js/background.js"></script>
     <script src="js/projecto.js"></script>
+    <script src="js/daypilot-all.min.js?v=2829" type="text/javascript"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
@@ -68,6 +69,9 @@
 </div>
 
 <!--MAIN CONTAINER-->
+
+
+
 <div class="mainContainer">
 
 <div class="InicioFlag">
@@ -75,9 +79,167 @@
 </div>
 
 <div class="Content">
-<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget tortor eget arcu dictum ullamcorper. Curabitur condimentum commodo elementum. Nulla ligula lorem, viverra ac risus quis, sodales pharetra urna. Nulla rutrum sem libero, lobortis scelerisque tortor dignissim ut. In sit amet enim magna. Cras orci purus, venenatis eu lorem non, sollicitudin condimentum risus. Etiam non ultrices risus. Proin interdum magna ac vehicula aliquet. Maecenas in turpis non metus porttitor scelerisque. Pellentesque vel ex sit amet nibh elementum vestibulum. Aenean laoreet fermentum imperdiet. Sed ac augue mauris. Etiam id magna ultricies, porttitor massa at, eleifend tellus.
 
-Vivamus tincidunt odio sed mauris vulputate efficitur. Phasellus egestas vulputate augue ut gravida. Duis nibh nibh, facilisis quis enim eu, rutrum suscipit turpis. Nullam molestie nulla vitae justo pellentesque sagittis. Maecenas commodo luctus turpis sollicitudin vehicula. Nunc rhoncus ultrices ligula, quis maximus ligula tempor eu. Curabitur dolor quam, rutrum vitae convallis non, fringilla et nibh. Sed feugiat, neque sed suscipit ultrices, tortor velit volutpat nisi, mollis luctus quam ante quis lectus. Duis congue elit sed odio faucibus imperdiet. Nam tempor maximus aliquam. Quisque et dapibus felis. Duis quis imperdiet libero. Sed posuere non purus at luctus. Proin posuere vel enim nec facilisis. Maecenas ultrices ligula massa, vel lobortis libero consequat nec. Ut commodo urna risus, nec congue lectus porttitor et. </p>
+<div id="main">
+<div id="dp"></div>
+
+<script type="text/javascript">
+
+    var dp = new DayPilot.Calendar("dp");
+
+    // view
+    dp.startDate = DayPilot.Date.today();
+    dp.viewType = "Week";
+    dp.allDayEventHeight = 25;
+
+    dp.eventDeleteHandling = "Update";
+    dp.onEventDelete = function(args) {
+        alert("deleting: " + args.e.text());
+    };
+
+    // bubble, with async loading
+    dp.bubble = new DayPilot.Bubble({
+        onLoad: function(args) {
+            var ev = args.source;
+            //alert("event: " + ev);
+            args.async = true;  // notify manually using .loaded()
+            
+            // simulating slow server-side load
+            setTimeout(function() {
+                args.html = "testing bubble for: <br>" + ev.text();
+                args.loaded();
+            }, 500);
+        }
+    });
+    
+    dp.contextMenu = new DayPilot.Menu({
+        items: [
+        {text:"Show event ID", onclick: function() {alert("Event value: " + this.source.value());} },
+        {text:"Show event text", onclick: function() {alert("Event text: " + this.source.text());} },
+        {text:"Show event start", onclick: function() {alert("Event start: " + this.source.start().toStringSortable());} },
+        {text:"Delete", onclick: function() { dp.events.remove(this.source); } }
+    ]});
+
+    // event moving
+    dp.onEventMoved = function (args) {
+        dp.message("Moved: " + args.e.text());
+    };
+    
+    // event resizing
+    dp.onEventResized = function (args) {
+        dp.message("Resized: " + args.e.text());
+    };
+
+    // event creating
+    dp.onTimeRangeSelected = function (args) {
+        var name = prompt("New event name:", "Event");
+        if (!name) return;
+        var e = new DayPilot.Event({
+            start: args.start,
+            end: args.end,
+            id: DayPilot.guid(),
+            resource: args.resource,
+            text: name
+        });
+        dp.events.add(e);
+        dp.clearSelection();
+        dp.message("Created");
+    };
+
+    dp.onTimeRangeSelected = function (args) {
+        //var name = prompt("New event name:", "Event");
+        //if (!name) return;
+        var e = new DayPilot.Event({
+            start: args.start,
+            end: args.end,
+            id: DayPilot.guid(),
+            resource: args.resource,
+            text: "Event"
+        });
+        dp.events.add(e);
+        dp.events.edit(e);
+        dp.clearSelection();
+        //dp.message("Created");
+    };
+
+    dp.onTimeRangeRightClick = function(args) {
+        window.console && console.log(args);
+    };
+    
+    dp.onTimeRangeDoubleClicked = function(args) {
+        alert("DoubleClick: start: " + args.start + " end: " + args.end + " resource: " + args.resource);
+    };
+
+    dp.onEventClick = function(args) {
+        //alert("clicked: " + args.e.id());
+    };
+
+    dp.showEventStartEnd = true;
+    dp.scrollLabelsVisible = true;
+    
+    
+    
+    
+//Creacion de evento
+    var e = new DayPilot.Event({
+        start: DayPilot.Date.today().addHours(10),
+        end: DayPilot.Date.today().addHours(12),
+        id: DayPilot.guid(),
+        text: "Prueba de prototipo"
+    });
+    
+    
+    var a = new DayPilot.Event({
+        start: DayPilot.Date.today().addHours(14),
+        end: DayPilot.Date.today().addHours(16),
+        id: DayPilot.guid(),
+        text: "Reunion con el rector"
+    });
+    dp.events.add(e);
+    dp.events.add(a);
+
+    dp.contextMenuSelection = new DayPilot.Menu({
+        items: [
+            {
+                'text': 'Create new event (JavaScript)', 'onclick': function () {
+                dp.events.add(new DayPilot.Event({
+                    start: this.source.start,
+                    end: this.source.end,
+                    text: "New event",
+                    resource: this.source.resource
+                }));
+            }
+            },
+            {'text': '-'},
+            {
+                'text': 'Show selection details', 'onclick': function () {
+                alert('Start: ' + this.source.start + '\nEnd: ' + this.source.end + '\nResource id: ' + this.source.resource);
+            }
+            },
+            {
+                'text': 'Clean selection', 'onclick': function () {
+                dp.clearSelection();
+            }
+            }]
+    });
+
+    dp.init();
+
+
+</script>
+
+
+    </div>
+<script type="text/javascript">
+$(document).ready(function() {
+    var url = window.location.href;
+    var filename = url.substring(url.lastIndexOf('/')+1);
+    if (filename === "") filename = "index.html";
+    $(".menu a[href='" + filename + "']").addClass("selected");
+});
+        
+</script>
+
 </div>
 
 <!-- MAIN CONTAINER END-->
