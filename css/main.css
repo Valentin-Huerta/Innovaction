@@ -408,6 +408,41 @@
 			font-weight:200;
 		}
 
+		.DocsContainer{
+			padding-top: 10px;
+			background-color: white;
+			width: 85%;
+			border-radius: 3px;
+		}
+
+		.choose_file{
+		    position:relative;
+		    display:inline-block;    
+			border-radius:8px;
+		    border:#ebebeb solid 1px;
+		    width:250px; 
+		    padding: 4px 6px 4px 8px;
+		    color: #7f7f7f;
+		    margin-top: 2px;
+			background:white
+		}
+		.choose_file input[type="file"]{
+		    -webkit-appearance:none; 
+		    position:absolute;
+		    top:0; left:0;
+		    opacity:0; 
+		}
+
+		.table {
+		}
+		.table th{
+			color:black;
+		}
+		.table td{
+			color:darkgray;
+		}
+
+
 		.mainContainer{
 			margin-left:140px;
 			position:absolute;
